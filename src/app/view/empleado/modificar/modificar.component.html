@@ -1,0 +1,64 @@
+<div class="card">
+    <div class="card-body">
+        <form (ngSubmit)="modificar()" #empleadoForm="ngForm">
+           <div>
+                <label class="form-label">
+                    Nombres
+                </label>
+                <input type="text" [(ngModel)]="empleado.nom_empleado" class="form-control" placeholder="Ingrese nombres" name="nom_empleado">
+            </div>
+            <div>
+                <label class="form-label">
+                    Apellidos
+                </label>
+                <input type="text" [(ngModel)]="empleado.apl_empleado" class="form-control" placeholder="Ingrese apellidos" name="apl_empleado">
+            </div>
+            <div>
+                <label class="form-label">
+                    Edad
+                </label>
+                <input type="text" [(ngModel)]="empleado.edad_empleado" class="form-control" placeholder="Ingrese edad" name="edad_empleado">
+            </div>
+            <div>
+                <label class="form-label">
+                    Sexo
+                </label>
+                <select class="form-control" name="id_sexo" [(ngModel)]="empleado.id_sexo">
+                    <option value="0">Seleccione Sexo</option>
+                    <option *ngFor="let sexo of cargarSexos" [value]="sexo.id_sexo">{{ sexo.nom_sexo }}</option>
+                </select>
+            </div>
+            <div>
+                <label class="form-label">
+                    DNI
+                </label>
+                <input type="text" [(ngModel)]="empleado.dni_empleado" class="form-control" placeholder="Ingrese dni" name="dni_empleado">
+            </div>
+            <div>
+                <label class="form-label">
+                    Direccion
+                </label>
+                <input type="text" [(ngModel)]="empleado.dir_empleado" class="form-control" placeholder="Ingrese direccion" name="dir_empleado">
+            </div>
+            <div>
+                <label class="form-label">
+                    Cargo
+                </label>
+                <select class="form-control" name="id_cargo" [(ngModel)]="empleado.id_cargo">
+                    <option value="0">Seleccione cargo</option>
+                    <option *ngFor="let cargo of cargarCargos" [value]="cargo.id_cargo">{{ cargo.nom_cargo }}</option>
+                </select>
+            </div>
+            <div>
+                <label class="form-label">
+                    Distrito
+                </label>
+                <select class="form-control" name="id_distrito" [(ngModel)]="empleado.id_distrito">
+                    <option value="0">Seleccione Distrito</option>
+                    <option *ngFor="let distrito of cargarDistrito" [value]="distrito.id_distrito">{{ distrito.nom_distrito }}</option>
+                </select>
+            </div>
+            <button class="btn btn-primary mt-2">Guardar</button>
+        </form>
+    </div>
+</div>
